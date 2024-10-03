@@ -1,5 +1,7 @@
 ﻿# Micro Architecture
 
+*Note: Run disabled CORS browser to view micro-app*
+
 ## Run ngx-build-plus-elements
 1. Open VSCode at `ngx-build-plus-elements` folder
 2. Open Ternimal at `main` folder and run `npm install`
