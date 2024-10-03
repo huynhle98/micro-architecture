@@ -1,0 +1,12 @@
+{
+  "port": 4300,
+  "files": [
+    "./dist/mfe1/**/*.{html,htm,css,js}"
+  ],
+  "server": {
+    "baseDir": "./dist/mfe1"
+  },
+  "ui": {
+    "port": 4300
+  }
+}

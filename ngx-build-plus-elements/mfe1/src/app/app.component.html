@@ -1,0 +1,13 @@
+<ul nz-menu nzMode="horizontal">
+  <ul nz-menu nzMode="horizontal">
+    <ng-container *ngFor="let item of pages">
+      <li nz-menu-item nzMatchRouter>
+        <a [routerLink]="item.path" >{{ item.title }}</a>
+      </li>
+    </ng-container>
+  </ul>
+</ul>
+<div>
+
+</div>
+<router-outlet></router-outlet>

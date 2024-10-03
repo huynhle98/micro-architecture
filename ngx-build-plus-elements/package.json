@@ -1,0 +1,13 @@
+{
+  "name": "ngx-build-plus-elements",
+  "version": "1.0.0",
+  "description": "Only using ngx-build-plus for micro-frontend development",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-main": "npm run start --prefix ./main",
+    "start-mfe1": "npm run start --prefix ./mfe1",
+    "start-mfe2": "npm run start --prefix ./mfe2"
+  },
+  "author": "",
+  "license": "ISC"
+}

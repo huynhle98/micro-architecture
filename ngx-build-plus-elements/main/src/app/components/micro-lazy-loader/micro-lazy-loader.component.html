@@ -1,0 +1,7 @@
+<ng-container *ngIf="dynamicApp().url && dynamicApp().tag; else errorTemplateRef">
+  <ax-lazy-element
+      *axLazyElementDynamic="dynamicApp().tag; url: dynamicApp().url; errorTemplate: errorTemplateRef"
+  ></ax-lazy-element>
+</ng-container>
+
+<ng-template #errorTemplateRef> Can't load the app: {{ dynamicApp().url }}</ng-template>

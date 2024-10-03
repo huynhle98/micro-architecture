@@ -1,0 +1,45 @@
+{
+  "name": "mfe1",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "concurrently \"npm run start:lite\" \"npm run watch\"",
+    "start:lite": "lite-server -c lite-server.config.json",
+    "test": "ng test",
+    "build": "ng build mfe1 --watch=true --single-bundle=true --output-hashing=none --vendor-chunk=false",
+    "build:production": "NODE_ENV=production ng build mfe1 --single-bundle=true --output-hashing=none --vendor-chunk=false --source-map=false",
+    "watch": "NODE_ENV=dev ng build --single-bundle=true mfe1 --watch=true --configuration=development"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^18.2.6",
+    "@angular/common": "^18.2.6",
+    "@angular/compiler": "^18.2.6",
+    "@angular/core": "^18.2.6",
+    "@angular/elements": "^18.2.6",
+    "@angular/forms": "^18.2.6",
+    "@angular/platform-browser": "^18.2.6",
+    "@angular/platform-browser-dynamic": "^18.2.6",
+    "@angular/router": "^18.2.6",
+    "ng-zorro-antd": "^18.1.1",
+    "ngx-build-plus": "^18.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^18.2.6",
+    "@angular/cli": "^18.2.6",
+    "@angular/compiler-cli": "^18.2.6",
+    "@types/jasmine": "~5.1.0",
+    "concurrently": "^9.0.1",
+    "jasmine-core": "~5.1.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "lite-server": "^2.6.1",
+    "typescript": "~5.4.2"
+  }
+}
