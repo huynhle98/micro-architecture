@@ -1,14 +1,14 @@
-import { CommonModule, Location } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, inject, OnDestroy, ViewEncapsulation } from '@angular/core';
 import {
   Router,
   RouterLink,
   RouterLinkActive,
   RouterModule,
-  RouterOutlet,
-  UrlTree,
+  RouterOutlet
 } from '@angular/router';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'mfe1-root',
@@ -28,7 +28,6 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 })
 export class AppComponent implements OnDestroy {
   private router = inject(Router);
-  private location = inject(Location);
 
   title = 'mfe1';
   pages = [
@@ -45,25 +44,17 @@ export class AppComponent implements OnDestroy {
     this.router.initialNavigation();
   }
   ngOnDestroy(): void {
-    // this.router.dispose();
-    // this.location.replaceState('')
-    const urlTree: UrlTree = this.router.createUrlTree(['']);
-    // this.router.navigateByUrl(urlTree, {
-    //   replaceUrl: true,
-    // });
+    // Reset location when destroyed application
     this.router.navigate([''], { skipLocationChange: true });
   }
 
   ngAfterViewInit() {
-    console.log(
-      '🚀 ~ AppComponent ~ ngAfterViewInit ~ this.router.url:',
-      this.router.url
-    );
-    // if (this.router.url === `/${environment.firstNavigationPath}`) {
-    //   this.router.navigate([environment.firstNavigationPath], {
-    //     replaceUrl: true,
-    //   });
-    //   return;
-    // }
+    // Handle update url navigation
+    if (this.router.url === `/${environment.firstNavigationPath}`) {
+      this.router.navigate([environment.firstNavigationPath], {
+        replaceUrl: true,
+      });
+      return;
+    }
   }
 }
